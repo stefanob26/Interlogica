@@ -1,0 +1,12 @@
+<mat-toolbar>
+  <a routerLink="">Dolci Capricci</a>
+  <span class="spacer"></span>
+  <button
+    mat-icon-button
+    class="btn"
+    (click)="goToLogin()"
+    *ngIf="viewLoginRoute"
+  >
+    <mat-icon>account_circle</mat-icon>
+  </button>
+</mat-toolbar>

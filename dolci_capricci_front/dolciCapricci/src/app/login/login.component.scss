@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+mat-card-title,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+}
+
+mat-icon {
+  float: left;
+  opacity: 0.5;
+  margin-top: 14px;
+}
+
+[mat-raised-button] {
+  width: 100%;
+  min-height: 30px;
+  background-color: transparent;
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: whitesmoke;
+}

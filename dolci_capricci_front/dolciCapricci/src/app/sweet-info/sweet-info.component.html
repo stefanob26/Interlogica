@@ -1,0 +1,8 @@
+<mat-card>
+  <mat-card-title> Ingredients list for {{ sweet.name }} </mat-card-title>
+  <mat-card-content>
+    <p *ngFor="let ingredinet of ingredientsList">
+      {{ ingredinet.name }} : {{ ingredinet.qty }} {{ ingredinet.unit }}
+    </p>
+  </mat-card-content>
+</mat-card>

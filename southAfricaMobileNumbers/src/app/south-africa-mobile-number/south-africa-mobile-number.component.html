@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="input-group mb-3">
+    <div class="custom-file">
+      <input
+        #uploads
+        (change)="onChange(uploads.files)"
+        class="custom-file-input"
+        class="form-control"
+        id="inputGroupFile01"
+        multiple
+        name="files"
+        type="file"
+        value="process"
+      />
+      <label class="custom-file-label" for="inputGroupFile01"
+      >Choose file</label
+      >
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row p-3">
+    <div class="col">
+      <button (click)="uploadValidNumbers()" class="rounded border bg-none">upload valid number</button>
+    </div>
+    <div class="col">
+      <button (click)="viewAllValidNumbers()" class="rounded border bg-none">View all valid</button>
+    </div>
+    <div class="col">
+      <button (click)="viewFixedNumbers()" class="rounded border bg-none">View all fixed</button>
+    </div>
+    <div class="col">
+      <button (click)="viewAllNotValidNumbers()" class="rounded border bg-none">View all invalid</button>
+    </div>
+    <div class="col">
+      <button (click)="viewAllRecords()" class="rounded border bg-none">View all records</button>
+    </div>
+  </div>
+  <div [hidden]="uploadSuccessAlert" class="alert alert-success" role="alert">
+    Saved all valid numbers
+  </div>
+  <div [hidden]="uploadWarningAlert" class="alert alert-warning" role="alert">
+    Please choose a valid file or check for valid number presents
+  </div>
+  <div [hidden]="uploadErrorAlert" class="alert alert-danger" role="alert">
+    Sorry, something went wrong!
+  </div>
+  <ngx-datatable
+    [columnMode]="columnMode.force"
+    [columns]="columns"
+    [footerHeight]="'auto'"
+    [headerHeight]="'auto'"
+    [limit]="10"
+    [reorderable]="true"
+    [rows]="dataToShow"
+    [summaryRow]="true"
+    class="bootstrap"
+    rowHeight="auto"
+  >
+  </ngx-datatable>
+</div>

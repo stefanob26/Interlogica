@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row p-3">
+
+    <div class="col">
+      <button (click)="getAllFixedNumbers()" class="rounded border bg-none">View all fixed</button>
+    </div>
+
+    <div class="col">
+      <button (click)="getAllNumbers()" class="rounded border bg-none">View all</button>
+    </div>
+
+  </div>
+  <div [hidden]="uploadErrorAlert" class="alert alert-danger" role="alert">
+    Sorry, something went wrong! Please reload the page or try again later!
+  </div>
+  <ngx-datatable
+    [columnMode]="columnMode.force"
+    [columns]="columns"
+    [footerHeight]="'auto'"
+    [headerHeight]="'auto'"
+    [limit]="10"
+    [reorderable]="true"
+    [rows]="allNumbers"
+    [summaryRow]="true"
+    class="bootstrap"
+    rowHeight="auto"
+  >
+  </ngx-datatable>
+</div>
+

@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "09feb249-c11a-4f62-8794-6c7be2c81a15",
+		"name": "South Africa Mobile Numbers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all numbers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/api/numbers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"numbers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all fixed numbers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/api/numbers/Fixed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"numbers",
+						"Fixed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new number",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"number\":47268485,\n        \"previous\":\"24DeLELEvdn324243\"\n    },\n    {\n        \"numbers\":482769623,\n        \"previous\":\"24DeLgsdbsdgb7ds897bgs8y\"\n    },\n    {\n        \"numbers\":25436645\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/api/numbers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"numbers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,20 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+[mat-icon-button] {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+mat-toolbar {
+  position: fixed;
+  z-index: 999;
+  top: 0px;
+}
+
+a{
+  text-decoration: none;
+color: #000;
+}

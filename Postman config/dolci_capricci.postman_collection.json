@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "98c646e3-877e-4874-9989-056239cb3365",
+		"name": "dolci_capricci",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"luana@email.test\",\n    \"password\": \"luana\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all sweet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/sweet/getAll",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"sweet",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sold sweet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/sweet/sold/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"sweet",
+						"sold",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all ingredients lists",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/ingredients/all",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"ingredients",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/logout",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all soldable sweet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/sweet/soldable",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"sweet",
+						"soldable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add sweet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"pelle\",\n    \"price\": 20,\n    \"ingredients\": {\n        \"farina\": {\n            \"qty\": 50,\n            \"unit\": \"g\"\n        },\n        \"latte\": {\n            \"qty\": 220,\n            \"unit\": \"ml\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/sweet",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"sweet"
+					],
+					"query": [
+						{
+							"key": "image",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

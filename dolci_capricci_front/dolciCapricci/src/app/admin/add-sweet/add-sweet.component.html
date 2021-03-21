@@ -1,0 +1,74 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Add new sweet</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form
+      class="example-form"
+      (submit)="addSweet()"
+      [formGroup]="newRequestForm"
+    >
+      <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" formControlName="name" required />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Price</mat-label>
+        <input matInput placeholder="Price" formControlName="price" required />
+      </mat-form-field>
+
+      <div
+        *ngFor="let ingredientsForm of ingredientsListForm.controls"
+        class="ingredients-container"
+        [formGroup]="ingredientsForm"
+      >
+        <mat-form-field class="example-full-width">
+          <mat-label>Ingredients Name</mat-label>
+          <input matInput placeholder="Name" formControlName="name" required />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>QTY</mat-label>
+          <input matInput placeholder="Price" formControlName="qty" required />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>unit</mat-label>
+          <input matInput placeholder="Price" formControlName="unit" required />
+        </mat-form-field>
+      </div>
+
+      <mat-card-actions class="btn-wrapper">
+        <button
+          mat-raised-button
+          color="primary"
+          class="remove-btn"
+          (click)="removeIngredients()"
+        >
+          <mat-icon>remove_circle</mat-icon>
+          <span> Remove </span>
+        </button>
+
+        <button
+          mat-raised-button
+          color="primary"
+          class="add-btn"
+          style="margin-left: 8px"
+          (click)="addIngredients()"
+        >
+          <mat-icon>add_circle</mat-icon>
+          <span>Add</span>
+        </button>
+      </mat-card-actions>
+
+      <mat-card-actions>
+        <button
+          mat-raised-button
+          type="submit"
+          class="send-btn"
+          color="primary"
+        >
+          Send
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+</mat-card>

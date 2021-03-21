@@ -1,0 +1,11 @@
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile (click)="removeSweet(sweet)" *ngFor="let sweet of sweets">
+    <img alt="" src="../../assets/{{sweet.sold? 'Sweet4Sold.png':'Sweet4.svg'}}" srcset=""/>
+    <mat-grid-tile-header>
+      {{ sweet.name }}
+    </mat-grid-tile-header>
+    <mat-grid-tile-footer>
+      {{sweet.sold_price ? 'price: ' + sweet.price + ' sold price: ' + sweet.sold_price : 'price: ' + sweet.price}}
+    </mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list>
